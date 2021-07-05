@@ -1,6 +1,23 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
+    "strict": true,
+    "typeRoots": ["./node_modules/@types", "./@types"],
+    "baseUrl": "./src",
+    "paths": {
+      "@api": ["./api"],
+      "@hooks": ["./hooks"],
+      "@navigation": ["./navigation"],
+      "@utils": ["./utils"],
+      "@styles": ["./styles"],
+
+      "@atoms": ["./components/atoms"],
+      "@molecules": ["./components/molecules"],
+      "@organisms": ["./components/organisms"],
+      "@templates": ["./components/templates"],
+      "@components/*": ["./components/*"],
+      "@screens/*": ["./screens/*"],
+      "@/*": ["./*"]
+    }
   }
 }
