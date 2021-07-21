@@ -1,48 +1,61 @@
-import { BottomTabParamList } from "@types";
-import React from "react";
+import { BottomTabParamList, IoniconsName } from "@types";
+import React, { useMemo } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import BolierScreen from "@screens/BolierScreen";
 import { useTheme } from "@react-navigation/native";
+import { Ionicons } from "@components/atoms/Icon";
 
 const Tab = createBottomTabNavigator<BottomTabParamList>();
 
 const BottomTab = () => {
-  //   const iconName: { [key: string]: [IconName, IconName] } = {
-  //     NoticeScreen: ["announcement-line", "announcement"],
-  //     StudyScreen: ["report-line", "report"],
-  //     NotificationScreen: ["alert-line", "alert"],
-  //     AccountScreen: ["person-line", "person"],
-  //   };
-
-  //   const tabName: { [key: string]: string } = {
-  //     NoticeScreen: "공지",
-  //     StudyScreen: "학습",
-  //     NotificationScreen: "알림",
-  //     AccountScreen: "계정",
-  //   };
-
   const { colors } = useTheme();
+
+  const iconName: { [key: string]: IoniconsName } = useMemo(
+    () => ({
+      TodayTab: "ios-newspaper",
+      GameTab: "rocket",
+      AppTab: "ios-logo-buffer",
+      ArcadeTab: "ios-game-controller",
+      SearchTab: "ios-search",
+    }),
+    []
+  );
+
+  const tabName: { [key: string]: string } = useMemo(
+    () => ({
+      TodayTab: "투데이",
+      GameTab: "게임",
+      AppTab: "앱",
+      ArcadeTab: "Arcade",
+      SearchTab: "검색",
+    }),
+    []
+  );
 
   return (
     <Tab.Navigator
-      //   screenOptions={({ route: { name } }) => ({
-      //     tabBarIcon: ({ focused, color }) => (
-      //       <Icon name={iconName[name][focused ? 1 : 0]} color={color} />
-      //     ),
-      //     title: tabName[name],
-      //   })}
+      screenOptions={({ route: { name } }) => ({
+        tabBarIcon: ({ color }) => (
+          <Ionicons name={iconName[name]} color={color} size={24} />
+        ),
+        title: tabName[name],
+      })}
       tabBarOptions={{
         activeTintColor: colors.primary,
-        inactiveTintColor: colors.primary + "60",
-        labelStyle: { fontSize: 14 },
-        tabStyle: {
-          borderTopWidth: 0.5,
-          borderTopColor: colors.border,
+        inactiveTintColor: colors.border,
+        labelStyle: { fontSize: 12 },
+        style: {
+          backgroundColor: colors.card,
+          paddingTop: 8,
+          elevation: 0, // for android
         },
       }}
     >
-      <Tab.Screen name="HomeScreen" component={BolierScreen} />
-      <Tab.Screen name="AccountScreen" component={BolierScreen} />
+      <Tab.Screen name="TodayTab" component={BolierScreen} />
+      <Tab.Screen name="GameTab" component={BolierScreen} />
+      <Tab.Screen name="AppTab" component={BolierScreen} />
+      <Tab.Screen name="ArcadeTab" component={BolierScreen} />
+      <Tab.Screen name="SearchTab" component={BolierScreen} />
     </Tab.Navigator>
   );
 };

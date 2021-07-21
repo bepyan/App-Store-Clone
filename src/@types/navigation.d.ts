@@ -12,7 +12,8 @@ declare module "@types" {
   };
 
   type NoAuthStackParamList = {
-    BolierScreen: undefined;
+    SigninScreen: undefined;
+    SignupScreen: undefined;
   };
 
   type AuthStackParamList = {
@@ -20,8 +21,11 @@ declare module "@types" {
   };
 
   type BottomTabParamList = {
-    HomeScreen: undefined;
-    AccountScreen: undefined;
+    TodayTab: undefined;
+    GameTab: undefined;
+    AppTab: undefined;
+    ArcadeTab: undefined;
+    SearchTab: undefined;
   };
 
   type ModalStackParamList = {

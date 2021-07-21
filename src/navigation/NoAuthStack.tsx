@@ -3,6 +3,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import BolierScreen from "@screens/BolierScreen";
 import { useTheme } from "@react-navigation/native";
+import { SignupScreen } from "@screens/NoAuthStack";
 
 const Stack = createStackNavigator<NoAuthStackParamList>();
 
@@ -18,7 +19,8 @@ const NoAuthStack = () => {
         // headerLeft: HeaderLeftButton,
       }}
     >
-      <Stack.Screen name="BolierScreen" component={BolierScreen} />
+      <Stack.Screen name="SigninScreen" component={SignupScreen} />
+      <Stack.Screen name="SignupScreen" component={BolierScreen} />
     </Stack.Navigator>
   );
 };
