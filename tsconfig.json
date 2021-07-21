@@ -6,11 +6,11 @@
     "baseUrl": "./src",
     "paths": {
       "@api": ["./api"],
-      "@hooks": ["./hooks"],
       "@context": ["./context"],
+      "@hooks": ["./hooks"],
       "@navigation": ["./navigation"],
-      "@utils": ["./utils"],
       "@styles": ["./styles"],
+      "@utils": ["./utils"],
 
       "@atoms": ["./components/atoms"],
       "@molecules": ["./components/molecules"],

@@ -18,8 +18,8 @@ export default function App() {
     <SafeAreaProvider>
       <AuthContextProvider>
         <StatusBar style="auto" />
-        <Navigation />;
+        <Navigation />
       </AuthContextProvider>
     </SafeAreaProvider>
-  )
+  );
 }

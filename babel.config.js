@@ -20,10 +20,11 @@ module.exports = function (api) {
           ],
           alias: {
             "@api": "./src/api",
+            "@context": "./src/context",
             "@hooks": "./src/hooks",
             "@navigation": "./src/navigation",
-            "@utils": "./src/utils",
             "@styles": "./src/styles",
+            "@utils": "./src/utils",
 
             "@atoms": "./src/components/atoms",
             "@molecules": "./src/components/molecules",

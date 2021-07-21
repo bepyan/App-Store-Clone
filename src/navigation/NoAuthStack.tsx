@@ -5,17 +5,17 @@ import BolierScreen from "@screens/BolierScreen";
 
 const Stack = createStackNavigator<NoAuthStackParamList>();
 
-const AuthStack = () => {
-    return (
-        <Stack.Navigator
-            screenOptions={{
-                headerBackTitleVisible: false,
-                // headerLeft: HeaderLeftButton,
-            }}
-        >
-            <Stack.Screen name="BolierScreen" component={BolierScreen} />
-        </Stack.Navigator>
-    );
+const NoAuthStack = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerBackTitleVisible: false,
+        // headerLeft: HeaderLeftButton,
+      }}
+    >
+      <Stack.Screen name="BolierScreen" component={BolierScreen} />
+    </Stack.Navigator>
+  );
 };
 
-export default AuthStack;
+export default NoAuthStack;

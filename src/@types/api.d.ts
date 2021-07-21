@@ -13,8 +13,8 @@ declare module "@types" {
 
   /* response */
   type FetchResType<T> = Promise<{
-    success: boolean
+    success: boolean;
     data: T;
-    message?: string
+    message?: string;
   }>;
 }

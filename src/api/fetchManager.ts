@@ -7,7 +7,13 @@ type FetchManagerType = (props: FetchProps) => FetchResType<any>;
  * @timeout default 8000 ms
  * @returns 실패시 `success: false, data: null, message: string` 응답을 받는다.
  */
-const fetchManager: FetchManagerType = async ({ url, method, body, auth, timeout }) => {
+const fetchManager: FetchManagerType = async ({
+  url,
+  method,
+  body,
+  auth,
+  timeout,
+}) => {
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), timeout || 8000);
   try {
@@ -37,7 +43,7 @@ const fetchManager: FetchManagerType = async ({ url, method, body, auth, timeout
   } catch (e) {
     alert(e.toString());
     console.log("[fetch error]", e);
-    return { success: false, data: null, message: "통신 에러" }
+    return { success: false, data: null, message: "통신 에러" };
   } finally {
     clearTimeout(timeoutId);
   }

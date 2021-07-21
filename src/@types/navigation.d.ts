@@ -7,8 +7,8 @@ declare module "@types" {
   type RootParamList = {
     BottomTab: NavigatorScreenParams<BottomTabParamList>;
     AuthStack: NavigatorScreenParams<AuthStackParamList>;
-    NoAuthStack: NavigatorScreenParams<NoAuthStackParamList>
-    ModalStack: NavigatorScreenParams<ModalStackParamList>
+    NoAuthStack: NavigatorScreenParams<NoAuthStackParamList>;
+    ModalStack: NavigatorScreenParams<ModalStackParamList>;
   };
 
   type NoAuthStackParamList = {
@@ -17,7 +17,7 @@ declare module "@types" {
 
   type AuthStackParamList = {
     BolierScreen: undefined;
-  }
+  };
 
   type BottomTabParamList = {
     HomeScreen: undefined;
@@ -36,14 +36,17 @@ declare module "@types" {
   /* 
     route props
   */
-  export type RootRouteProps<RouteName extends keyof RootParamList> =
-    RouteProp<RootParamList, RouteName>;
+  export type RootRouteProps<RouteName extends keyof RootParamList> = RouteProp<
+    RootParamList,
+    RouteName
+  >;
 
   export type AuthStackRouteProps<RouteName extends keyof AuthStackParamList> =
     RouteProp<AuthStackParamList, RouteName>;
 
-  export type NoAuthStackRouteProps<RouteName extends keyof NoAuthStackParamList> =
-    RouteProp<NoAuthStackParamList, RouteName>;
+  export type NoAuthStackRouteProps<
+    RouteName extends keyof NoAuthStackParamList
+  > = RouteProp<NoAuthStackParamList, RouteName>;
 
   export type ModalRouteProps<RouteName extends keyof ModalStackParamList> =
     RouteProp<ModalStackParamList, RouteName>;
