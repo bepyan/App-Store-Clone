@@ -2,6 +2,7 @@ import { BottomTabParamList } from "@types";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import BolierScreen from "@screens/BolierScreen";
+import { useTheme } from "@react-navigation/native";
 
 const Tab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -20,6 +21,8 @@ const BottomTab = () => {
   //     AccountScreen: "계정",
   //   };
 
+  const { colors } = useTheme();
+
   return (
     <Tab.Navigator
       //   screenOptions={({ route: { name } }) => ({
@@ -29,14 +32,12 @@ const BottomTab = () => {
       //     title: tabName[name],
       //   })}
       tabBarOptions={{
-        activeTintColor: "#A19882",
-        inactiveTintColor: "#C2B8A3",
-        labelStyle: {
-          fontSize: 14,
-        },
+        activeTintColor: colors.primary,
+        inactiveTintColor: colors.primary + "60",
+        labelStyle: { fontSize: 14 },
         tabStyle: {
           borderTopWidth: 0.5,
-          borderTopColor: "#dedede",
+          borderTopColor: colors.border,
         },
       }}
     >

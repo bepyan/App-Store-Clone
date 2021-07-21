@@ -1,9 +1,12 @@
-# Expo Bolier-Plate
+# Expo Cloning iOS Theme
 
 ### 👩🏻‍🎨
 
 **Atomic** design  
-with Absolute Path, full setup for project
+with Absolute Path
+
+### 🎯 Target
+Developer App, App Store
 
 ### 🛠
 
@@ -12,20 +15,3 @@ with Absolute Path, full setup for project
 - react-native
 - react-native-navigation
 - prettier
-
-### 🐪
-
-- Stacks
-- BottomTabs
-
-### ⚙️
-
-- use `index.ts` to re-export
-  ```ts
-  export { default as ComponentName } from "./ComponentName";
-  export * from "./ComponentName";
-  ```
-- `api` for fetch with JWT RESTful api
-- `hooks` for custom hook
-- `styles` for common style setting (ex. palette)
-- `utils` for util method (ex. time, sort)

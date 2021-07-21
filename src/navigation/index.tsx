@@ -8,14 +8,17 @@ import NoAuthStack from "./NoAuthStack";
 import ModalStack from "./ModalStack";
 import { useAuthContext } from "@context";
 import { forStackFade } from "@utils";
+import { useColorScheme } from "react-native";
+import { MyDarkTheme, MyTheme } from "@/styles/theme";
 
 const Root = createStackNavigator<RootParamList>();
 
 export default () => {
   const { auth } = useAuthContext();
+  const colorScheme = useColorScheme();
 
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={colorScheme === "dark" ? MyDarkTheme : MyTheme}>
       <Root.Navigator
         screenOptions={() => ({ headerShown: false })}
         mode="modal"
