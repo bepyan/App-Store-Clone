@@ -2,12 +2,15 @@ import { RootParamList } from "@types";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import BottomTabs from "./BottomTabs";
-import Stacks from "./Stacks";
+import BottomTab from "./BottomTab";
+import AuthStack from "./AuthStack";
+import { useAuthContext } from "@context";
 
 const Root = createStackNavigator<RootParamList>();
 
 export default () => {
+  const { auth } = useAuthContext();
+
   return (
     <NavigationContainer>
       <Root.Navigator
@@ -15,8 +18,18 @@ export default () => {
           headerShown: false,
         })}
       >
-        <Root.Screen name="BottomTabs" component={BottomTabs} />
-        <Root.Screen name="Stacks" component={Stacks} />
+        {
+          !!!auth ? (
+            <>
+              <Root.Screen name="NoAuthStack" component={AuthStack} />
+            </>
+          ) : (
+            <>
+              <Root.Screen name="BottomTab" component={BottomTab} />
+              <Root.Screen name="AuthStack" component={AuthStack} />
+            </>
+          )
+        }
       </Root.Navigator>
     </NavigationContainer>
   );

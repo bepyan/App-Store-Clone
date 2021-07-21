@@ -5,15 +5,22 @@ declare module "@types" {
     navigation params
   */
   type RootParamList = {
-    BottomTabs: NavigatorScreenParams<BottomTabsParamList>;
-    Stacks: NavigatorScreenParams<StacksParamList>;
+    BottomTab: NavigatorScreenParams<BottomTabParamList>;
+    AuthStack: NavigatorScreenParams<AuthStackParamList>;
+    NoAuthStack: NavigatorScreenParams<NoAuthStackParamList>
   };
-  type BottomTabsParamList = {
+
+  type NoAuthStackParamList = {
+    BolierScreen: undefined;
+  };
+
+  type AuthStackParamList = {
+    BolierScreen: undefined;
+  }
+
+  type BottomTabParamList = {
     HomeScreen: undefined;
     AccountScreen: undefined;
-  };
-  type StacksParamList = {
-    BolierScreen: undefined;
   };
 
   /* 

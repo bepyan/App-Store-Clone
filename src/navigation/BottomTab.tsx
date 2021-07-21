@@ -1,11 +1,11 @@
-import { BottomTabsParamList } from "@types";
+import { BottomTabParamList } from "@types";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import BolierScreen from "@screens/BolierScreen";
 
-const Tab = createBottomTabNavigator<BottomTabsParamList>();
+const Tab = createBottomTabNavigator<BottomTabParamList>();
 
-const BottomTabs = () => {
+const BottomTab = () => {
   //   const iconName: { [key: string]: [IconName, IconName] } = {
   //     NoticeScreen: ["announcement-line", "announcement"],
   //     StudyScreen: ["report-line", "report"],
@@ -46,4 +46,4 @@ const BottomTabs = () => {
   );
 };
 
-export default BottomTabs;
+export default BottomTab;

@@ -1,13 +1,11 @@
-import { StacksParamList } from "@types";
+import { AuthStackParamList } from "@types";
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import BolierScreen from "@screens/BolierScreen";
 
-interface Props {}
+const Stack = createStackNavigator<AuthStackParamList>();
 
-const Stack = createStackNavigator<StacksParamList>();
-
-const Stacks = (props: Props) => {
+const AuthStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -20,4 +18,4 @@ const Stacks = (props: Props) => {
   );
 };
 
-export default Stacks;
+export default AuthStack;

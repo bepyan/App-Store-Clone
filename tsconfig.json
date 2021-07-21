@@ -7,6 +7,7 @@
     "paths": {
       "@api": ["./api"],
       "@hooks": ["./hooks"],
+      "@context": ["./context"],
       "@navigation": ["./navigation"],
       "@utils": ["./utils"],
       "@styles": ["./styles"],
