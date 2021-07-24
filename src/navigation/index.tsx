@@ -1,7 +1,7 @@
 import { RootParamList } from "@types";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import { createStackNavigator, Header } from "@react-navigation/stack";
 import BottomTab from "./BottomTab";
 import AuthStack from "./AuthStack";
 import NoAuthStack from "./NoAuthStack";
@@ -20,7 +20,9 @@ export default () => {
   return (
     <NavigationContainer theme={colorScheme === "dark" ? MyDarkTheme : MyTheme}>
       <Root.Navigator
-        screenOptions={() => ({ headerShown: false })}
+        screenOptions={{
+          headerShown: false,
+        }}
         mode="modal"
       >
         {!!!auth ? (
