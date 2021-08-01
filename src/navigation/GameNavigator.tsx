@@ -1,9 +1,9 @@
 import React from "react";
-import { createStackNavigator, Header } from "@react-navigation/stack";
-import { GameTab } from "@screens/BottomTab";
+import { createStackNavigator } from "@react-navigation/stack";
 import { BlurView } from "expo-blur";
 import { useTheme } from "@react-navigation/native";
 import { StyleSheet } from "react-native";
+import { GameDetail, GameHome } from "@screens/GameTab";
 
 const Stack = createStackNavigator();
 
@@ -24,7 +24,8 @@ const GameNavigator = () => {
         // headerLeft: HeaderLeftButton,
       })}
     >
-      <Stack.Screen name="GameHomeScreen" component={GameTab} />
+      <Stack.Screen name="GameHome" component={GameHome} />
+      <Stack.Screen name="GameDetail" component={GameDetail} />
     </Stack.Navigator>
   );
 };
