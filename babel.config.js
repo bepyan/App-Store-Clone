@@ -28,8 +28,8 @@ module.exports = function (api) {
 
             "@atoms": "./src/components/atoms",
             "@molecules": "./src/components/molecules",
+            "@molecules": "./src/components/organisms",
             "@templates": "./src/components/templates",
-            "@components": "./src/components",
             "@screens": "./src/screens",
             "@": "./src",
           },

@@ -16,7 +16,6 @@
       "@molecules": ["./components/molecules"],
       "@organisms": ["./components/organisms"],
       "@templates": ["./components/templates"],
-      "@components/*": ["./components/*"],
       "@screens/*": ["./screens/*"],
       "@/*": ["./*"]
     }
